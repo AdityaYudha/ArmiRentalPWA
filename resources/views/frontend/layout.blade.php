@@ -1,17 +1,20 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>CarRental &mdash; Free Website Template by Colorlib</title>
+    <title>Armi Rental &mdash; Rental Mobil Pontianak</title>
     <meta charset="utf-8" />
-    <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1, shrink-to-fit=no"
-    />
+    
 
     <link
       href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700;900&display=swap"
       rel="stylesheet"
     />
+
+            <!-- PWA  -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta name="theme-color" content="#6777ef"/>
+    <link rel="apple-touch-icon" href="{{ asset('logo.png') }}">
+    <link rel="manifest" href="{{ asset('/manifest.json') }}">
 
     <link rel="stylesheet" href="{{ asset('frontend/fonts/icomoon/style.css') }}" />
 
@@ -25,6 +28,21 @@
 
     <!-- MAIN CSS -->
     <link rel="stylesheet" href="{{ asset('frontend/css/style.css') }}" />
+
+     <!-- Favicon-->
+     <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+     <!-- Bootstrap icons-->
+     <link
+       href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css"
+       rel="stylesheet"
+     />
+     <link
+       href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css"
+       rel="stylesheet"
+     />
+     <!-- Core theme CSS (includes Bootstrap)-->
+     <link href="css/styles.css" rel="stylesheet" />
+     <link rel="stylesheet" href="css/custom.css" />
   </head>
 
   <body>
@@ -43,7 +61,7 @@
           <div class="row align-items-center position-relative">
             <div class="col-3">
               <div class="site-logo">
-                <a href="{{ url('/') }}"><strong>CarRental</strong></a>
+                <a href="{{ url('/') }}"><strong>ArmiRental</strong></a>
               </div>
             </div>
 
@@ -85,7 +103,7 @@
               </p>
             </div>
             <div class="col-lg-5 text-md-right">
-              <a href="#" class="btn btn-primary btn-white">Sewa Sekarang</a>
+              <a href="/daftar-mobil" class="btn btn-primary btn-white">Sewa Sekarang</a>
             </div>
           </div>
         </div>
@@ -97,20 +115,43 @@
             <div class="col-lg-3">
               <h2 class="footer-heading mb-4">About Us</h2>
               <p>
-               {{ $setting->footer_description }}
+                @if ($setting)
+                {{ $setting->footer_description }}
+            @else
+                Default Footer Description
+            @endif
+            
               </p>
               <ul class="list-unstyled social">
                 <li>
-                  <a href="{{ $setting->facebook }}"><span class="icon-facebook"></span></a>
+                  @if ($setting !== null && $setting->facebook !== null)
+                  {{ $setting->facebook }}
+              @else
+                  Default Facebook URL
+              @endif
+
                 </li>
                 <li>
-                  <a href="{{ $setting->instagram }}"><span class="icon-instagram"></span></a>
+                  @if ($setting !== null && $setting->instagram !== null)
+                    {{ $setting->instagram }}
+                @else
+                    Default instagram URL
+                @endif
+
                 </li>
                 <li>
-                  <a href="{{ $setting->twitter }}"><span class="icon-twitter"></span></a>
+                  @if ($setting !== null && $setting->twitter !== null)
+                    {{ $setting->twitter }}
+                @else
+                    Default twitter URL
+                @endif
                 </li>
                 <li>
-                  <a href="{{ $setting->linkedin }}"><span class="icon-linkedin"></span></a>
+                  @if ($setting !== null && $setting->linkedin !== null)
+                    {{ $setting->linkedin }}
+                @else
+                    Default linkedin URL
+                @endif
                 </li>
               </ul>
             </div>
@@ -159,7 +200,7 @@
               </div>
             </div>
           </div>
-          <div class="row pt-5 mt-5 text-center">
+          <div class="row text-center">
             <div class="col-md-12">
               <div class="border-top pt-5">
                 <p>
@@ -168,9 +209,7 @@
                   <script>
                     document.write(new Date().getFullYear());
                   </script>
-                  All rights reserved | This template is made with
-                  <i class="icon-heart text-danger" aria-hidden="true"></i> by
-                  <a href="https://colorlib.com" target="_blank">Colorlib</a>
+                  Armi Rental Pontianak
                   <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
                 </p>
               </div>
@@ -193,6 +232,15 @@
     <script src="{{ asset('frontend/js/aos.js') }}"></script>
 
     <script src="{{ asset('frontend/js/main.js') }}"></script>
+
+    <script src="{{ asset('/sw.js') }}"></script>
+<script>
+    if (!navigator.serviceWorker.controller) {
+        navigator.serviceWorker.register("/sw.js").then(function (reg) {
+            console.log("Service worker has been registered for scope: " + reg.scope);
+        });
+    }
+</script>
     @stack('script-alt')
   </body>
 </html>

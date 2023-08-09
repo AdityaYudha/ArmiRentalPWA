@@ -1,0 +1,17 @@
+{
+    "name": "Armi Rental",
+    "short_name": "Armi",
+    "start_url": "/frontend/homepage.php",
+    "background_color": "#6777ef",
+    "description": "Armi Rental Mobil Pontianak",
+    "display": "fullscreen",
+    "theme_color": "#6777ef",
+    "icons": [
+        {
+            "src": "logo.png",
+            "sizes": "512x512",
+            "type": "image/png",
+            "purpose": "any maskable"
+        }
+    ]
+}

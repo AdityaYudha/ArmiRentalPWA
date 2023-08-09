@@ -51,6 +51,30 @@
                           <input type="number" class="form-control" name="penumpang" value="{{ old('penumpang') }}" id="penumpang">
                         </div>
                     </div>
+
+                    <div class="form-group row border-bottom pb-4">
+                      <label for="bahanbakar" class="col-sm-2 col-form-label">Bahan Bakar</label>
+                      <div class="col-sm-10">
+                          <select class="form-control" name="bahanbakar" id="bahanbakar">
+                              <option value="Bensin" @if(old('bahanbakar') === 'Bensin') selected @endif>Bensin</option>
+                              <option value="Diesel" @if(old('bahanbakar') === 'Diesel') selected @endif>Diesel</option>
+                              <option value="Pertamax" @if(old('bahanbakar') === 'Pertamax') selected @endif>Pertamax</option>
+                              <!-- Tambahkan opsi lainnya sesuai kebutuhan -->
+                          </select>
+                      </div>
+                  </div>
+                  
+                  <div class="form-group row border-bottom pb-4">
+                    <label for="transmisi" class="col-sm-2 col-form-label">Transmisi</label>
+                    <div class="col-sm-10">
+                        <select class="form-control" name="transmisi" id="transmisi">
+                            <option value="Manual" @if(old('transmisi') === 'Manual') selected @endif>Manual</option>
+                            <option value="Matic" @if(old('transmisi') === 'Matic') selected @endif>Matic</option>
+                            <!-- Tambahkan opsi lainnya sesuai kebutuhan -->
+                        </select>
+                    </div>
+                </div>
+
                     <div class="form-group row border-bottom pb-4">
                         <label for="image" class="col-sm-2 col-form-label">Gambar Mobil</label>
                         <div class="col-sm-10">

@@ -1,23 +1,25 @@
 @extends('frontend.layout')
 
 @section('content')
-<div class="hero inner-page" style="background-image: url('{{ asset('frontend/images/hero_1_a.jpg') }}');">
-        
+<div
+        class="hero inner-page"
+        style="background-image: url('{{ asset('frontend/images/hero_1_a.jpg') }}')"
+      >
         <div class="container">
-          <div class="row align-items-end ">
+          <div class="row align-items-end">
             <div class="col-lg-5">
-
               <div class="intro">
-                <h1><strong>About</strong></h1>
-                <div class="custom-breadcrumbs"><a href="index.html">Home</a> <span class="mx-2">/</span> <strong>About</strong></div>
+                <h1><strong>Tentang Kami</strong></h1>
+                <div class="custom-breadcrumbs">
+                  <a href="/">Home</a> <span class="mx-2">/</span>
+                  <strong>Tentang Kami</strong>
+                </div>
               </div>
-
             </div>
           </div>
         </div>
       </div>
 
-    
 
     <div class="site-section">
       <div class="container">

@@ -10,7 +10,7 @@
 
               <div class="intro">
                 <h1><strong>Blog</strong></h1>
-                <div class="custom-breadcrumbs"><a href="index.html">Home</a> <span class="mx-2">/</span> <strong>Blog</strong></div>
+                <div class="custom-breadcrumbs"><a href="/">Home</a> <span class="mx-2">/</span> <strong>Blog</strong></div>
               </div>
 
             </div>

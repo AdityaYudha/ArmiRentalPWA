@@ -3,15 +3,14 @@
 @section('content')
 <div
         class="hero inner-page"
-        style="background-image: url('{{ asset('frontend/images/hero_1_a.jpg') }}')"
-      >
+        style="background-image: url('{{ asset('frontend/images/hero_1_a.jpg') }}')">
         <div class="container">
           <div class="row align-items-end">
             <div class="col-lg-5">
               <div class="intro">
                 <h1><strong>Daftar Mobil</strong></h1>
                 <div class="custom-breadcrumbs">
-                  <a href="index.html">Home</a> <span class="mx-2">/</span>
+                  <a href="/">Home</a> <span class="mx-2">/</span>
                   <strong>Daftar Mobil</strong>
                 </div>
               </div>

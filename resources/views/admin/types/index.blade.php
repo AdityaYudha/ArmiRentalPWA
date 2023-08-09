@@ -10,7 +10,7 @@
 
             <div class="card">
               <div class="card-header">
-                <h3 class="card-title">Semua Data</h3>
+                <h1 class="card-title">Daftar Kategori Mobil</h1>
                 <a href="{{ route('admin.types.create')}}" class="btn btn-success shadow-sm float-right"> <i class="fa fa-plus"></i> Tambah </a>
               </div>
               <!-- /.card-header -->

@@ -274,7 +274,7 @@ h1, h2, h3, h4, h5,
 
 .site-section {
   padding: 2.5em 0; }
-  @media (min-width: 768px) {
+  @media (min-width: 600px) {
     .site-section {
       padding: 5em 0; } }
   .site-section.site-section-sm {
@@ -282,7 +282,7 @@ h1, h2, h3, h4, h5,
 
 .site-footer {
   padding: 4em 0; }
-  @media (min-width: 768px) {
+  @media (min-width: 600px) {
     .site-footer {
       padding: 8em 0; } }
   .site-footer .border-top {
@@ -1588,7 +1588,7 @@ h1, h2, h3, h4, h5,
   position: relative;
   background-size: cover; }
   .hero, .hero > .container > .row {
-    height: 100vh;
+    height: 120vh;
     min-height: 570px; }
   .hero .intro {
     position: relative;

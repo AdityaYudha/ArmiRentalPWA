@@ -1,6 +1,20 @@
 <?php
 
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\HomeController;
+use App\Http\Controllers\UserController;
+use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\Admin\TeamController;
+use App\Http\Controllers\Admin\TypeController;
+use App\Http\Controllers\Frontend\CarController;
+use App\Http\Controllers\Admin\BookingController;
+use App\Http\Controllers\Admin\SettingController;
+use App\Http\Controllers\Frontend\BlogController;
+use App\Http\Controllers\Frontend\AboutController;
+use App\Http\Controllers\Frontend\ContactController;
+use App\Http\Controllers\Admin\TestimonialController;
+use App\Http\Controllers\Frontend\HomepageController;
 
 /*
 |--------------------------------------------------------------------------
@@ -12,7 +26,6 @@ use Illuminate\Support\Facades\Route;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
-
 Route::get('/', [\App\http\Controllers\Frontend\HomepageController::class,'index'])->name('homepage');
 Route::get('daftar-mobil', [\App\http\Controllers\Frontend\CarController::class,'index'])->name('car.index');
 Route::get('daftar-mobil/{car}', [\App\http\Controllers\Frontend\CarController::class,'show'])->name('car.show');

@@ -59,8 +59,9 @@
                   <span class="number text-primary">01.</span>
                   <h3>Pilih Mobil</h3>
                   <p>
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                    Vero, laboriosam!
+                    Pilih mobil sesuai keinginan anda!
+                    <br>
+                    .
                   </p>
                 </div>
               </div>
@@ -72,8 +73,9 @@
                   <span class="number text-primary">02.</span>
                   <h3>Isi Form</h3>
                   <p>
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                    Vero, laboriosam!
+                    Kemudian isi data diri anda!     
+                  <br>            
+                   .
                   </p>
                 </div>
               </div>
@@ -85,8 +87,7 @@
                   <span class="number text-primary">03.</span>
                   <h3>Pembayaran</h3>
                   <p>
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                    Vero, laboriosam!
+                    Lakukan pembayaran untuk konfirmasi pemesanan anda.
                   </p>
                 </div>
               </div>

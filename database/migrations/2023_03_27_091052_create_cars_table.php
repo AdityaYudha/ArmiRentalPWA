@@ -21,6 +21,8 @@ return new class extends Migration
             $table->integer('penumpang');
             $table->text('description');
             $table->text('image');
+            $table->string('bahanbakar');
+            $table->string('transmisi');
             $table->integer('status')->nullable();
             $table->timestamps();
         });

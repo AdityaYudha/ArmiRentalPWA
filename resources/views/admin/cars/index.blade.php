@@ -26,6 +26,8 @@
                         <th>Harga Sewa</th>
                         <th>Jumlah Penumpang</th>
                         <th>Jumlah Pintu</th>
+                        <th>Bahan Bakar</th>
+                        <th>Transmisi</th>
                         <th>Status</th>
                         <th>Action</th>
                     </tr>
@@ -48,6 +50,8 @@
                                 <td>Rp{{ number_format($car->price, 0,",",".") }}</td>
                                 <td>{{ $car->penumpang }}</td>
                                 <td>{{ $car->pintu }}</td>
+                                <td>{{ $car->bahanbakar }}</td>
+                                <td>{{ $car->transmisi }}</td>
                                 <td>{{ $car->statusLabel() }}</td>
                                 <td>
                                 <div class="btn-group btn-group-sm">
@@ -65,7 +69,7 @@
                             </tr>
                         @empty
                             <tr>
-                                <td colspan="9" class="text-center">Data Kosong !</td>
+                                <td colspan="11" class="text-center">Data Kosong !</td>
                             </tr>
                         @endforelse
                     </table>
