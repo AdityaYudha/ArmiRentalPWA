@@ -8,7 +8,7 @@
           <div class="row align-items-end">
             <div class="col-lg-5">
               <div class="intro">
-                <h1><strong>{{ $car->nama_mobil }}</strong></h1>
+                <h2><strong>{{ $car->nama_mobil }}</strong></h2>
                 <div class="custom-breadcrumbs">
                 </div>
               </div>

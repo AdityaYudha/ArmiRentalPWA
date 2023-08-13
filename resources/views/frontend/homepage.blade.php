@@ -1,7 +1,7 @@
 @extends('frontend.layout')
 
 @section('content')
-<div class="hero" style="background-image: url('{{ asset('frontend/images/hero_1_a.jpg') }}')">
+<div class="hero" style="background-image: url('{{ asset('frontend/images/hero_new_3.jpg') }}')">
         <div class="container">
           <div class="row align-items-center justify-content-center">
             <div class="col-lg-10">
@@ -95,18 +95,11 @@
           </div>
         </div>
       </div>
-
       <div class="site-section">
         <div class="container">
           <div class="row align-items-center">
             <div class="col-lg-7 text-center order-lg-2">
-              <div class="img-wrap-1 mb-5">
-                <img
-                  src="{{ asset('frontend/images/feature_01.png') }}"
-                  alt="Image"
-                  class="img-fluid"
-                />
-              </div>
+                <img style="width: 100%" src="{{ asset('frontend/images/feature_01.png') }}"/>
             </div>
             <div class="col-lg-4 ml-auto order-lg-1">
               <h3 class="mb-4 section-heading">
@@ -162,7 +155,7 @@
                   </div>
                   <div>
                     <p>
-                     {{ $car->description}}
+                      <p>{{ Str::limit($car->description, $limit = 150, $end = '...') }}</p>
                     </p>
                     <p>
                       <a href="{{ route('car.show', $car) }}" class="btn btn-primary btn-sm">Sewa Sekarang</a>

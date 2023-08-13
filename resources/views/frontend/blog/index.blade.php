@@ -2,7 +2,7 @@
 
 @section('content')
  
-<div class="hero inner-page" style="background-image: url('{{ asset('frontend/images/hero_1_a.jpg') }}');">
+<div class="hero inner-page" style=" background-image: url('{{ asset('frontend/images/hero_1_a.jpg') }}');">
         
         <div class="container">
           <div class="row align-items-end ">
@@ -12,14 +12,10 @@
                 <h1><strong>Blog</strong></h1>
                 <div class="custom-breadcrumbs"><a href="/">Home</a> <span class="mx-2">/</span> <strong>Blog</strong></div>
               </div>
-
             </div>
           </div>
         </div>
       </div>
-
-    
-
     <div class="site-section bg-light">
       <div class="container">
         <div class="row">
@@ -42,9 +38,7 @@
         @empty
             <p class="display-4 text-center mx-auto">Data yang anda cari kosong !</p>
         @endforelse
-
         </div>
-
       </div>
     </div>
 @endsection

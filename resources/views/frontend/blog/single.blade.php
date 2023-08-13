@@ -9,11 +9,10 @@
           <div class="row align-items-end">
             <div class="col-lg-12">
               <div class="intro">
-                <h1><strong>{{ $blog->title }}</strong></h1>
-                <div class="pb-4">
+                <h2><strong>{{ $blog->title }}</strong></h2>
+                <div class="pb-5">
                   <strong class="text-black"
-                    >{{ date('M d, Y', strtotime($blog->created_at)) }}</strong
-                  >
+                    >{{ date('M d, Y', strtotime($blog->created_at)) }}</strong>
                 </div>
               </div>
             </div>
@@ -26,6 +25,7 @@
           <div class="row">
             <div class="col-md-8 blog-content">
               <div class="card" style="border: none;">
+                <img src="{{ Storage::url($blog->image) }}" alt="Image" style="padding:20px">
                 {!! $blog->description !!}
               </div>
               <div id="disqus_thread"></div>

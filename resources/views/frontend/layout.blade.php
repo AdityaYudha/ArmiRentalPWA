@@ -111,98 +111,9 @@
 
       <footer class="site-footer">
         <div class="container">
-          <div class="row">
-            <div class="col-lg-3">
-              <h2 class="footer-heading mb-4">About Us</h2>
-              <p>
-                @if ($setting)
-                {{ $setting->footer_description }}
-            @else
-                Default Footer Description
-            @endif
-            
-              </p>
-              <ul class="list-unstyled social">
-                <li>
-                  @if ($setting !== null && $setting->facebook !== null)
-                  {{ $setting->facebook }}
-              @else
-                  Default Facebook URL
-              @endif
-
-                </li>
-                <li>
-                  @if ($setting !== null && $setting->instagram !== null)
-                    {{ $setting->instagram }}
-                @else
-                    Default instagram URL
-                @endif
-
-                </li>
-                <li>
-                  @if ($setting !== null && $setting->twitter !== null)
-                    {{ $setting->twitter }}
-                @else
-                    Default twitter URL
-                @endif
-                </li>
-                <li>
-                  @if ($setting !== null && $setting->linkedin !== null)
-                    {{ $setting->linkedin }}
-                @else
-                    Default linkedin URL
-                @endif
-                </li>
-              </ul>
-            </div>
-            <div class="col-lg-8 ml-auto">
-              <div class="row">
-                <div class="col-lg-3">
-                  <h2 class="footer-heading mb-4">Quick Links</h2>
-                  <ul class="list-unstyled">
-                    <li><a href="#">About Us</a></li>
-                    <li><a href="#">Testimonials</a></li>
-                    <li><a href="#">Terms of Service</a></li>
-                    <li><a href="#">Privacy</a></li>
-                    <li><a href="#">Contact Us</a></li>
-                  </ul>
-                </div>
-                <div class="col-lg-3">
-                  <h2 class="footer-heading mb-4">Resources</h2>
-                  <ul class="list-unstyled">
-                    <li><a href="#">About Us</a></li>
-                    <li><a href="#">Testimonials</a></li>
-                    <li><a href="#">Terms of Service</a></li>
-                    <li><a href="#">Privacy</a></li>
-                    <li><a href="#">Contact Us</a></li>
-                  </ul>
-                </div>
-                <div class="col-lg-3">
-                  <h2 class="footer-heading mb-4">Support</h2>
-                  <ul class="list-unstyled">
-                    <li><a href="#">About Us</a></li>
-                    <li><a href="#">Testimonials</a></li>
-                    <li><a href="#">Terms of Service</a></li>
-                    <li><a href="#">Privacy</a></li>
-                    <li><a href="#">Contact Us</a></li>
-                  </ul>
-                </div>
-                <div class="col-lg-3">
-                  <h2 class="footer-heading mb-4">Company</h2>
-                  <ul class="list-unstyled">
-                    <li><a href="#">About Us</a></li>
-                    <li><a href="#">Testimonials</a></li>
-                    <li><a href="#">Terms of Service</a></li>
-                    <li><a href="#">Privacy</a></li>
-                    <li><a href="#">Contact Us</a></li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-          </div>
           <div class="row text-center">
             <div class="col-md-12">
-              <div class="border-top pt-5">
+              <div class="border-top pt-3">
                 <p>
                   <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
                   Copyright &copy;

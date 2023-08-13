@@ -54,7 +54,7 @@
                       </div>
                       <div>
                         <p>
-                        {{ $car->description }}
+                          <p>{{ Str::limit($car->description, $limit = 150, $end = '...') }}</p>
                         </p>
                         <p>
                           <a href="{{ route('car.show', $car) }}" class="btn btn-primary btn-sm">Sewa Sekarang</a>
