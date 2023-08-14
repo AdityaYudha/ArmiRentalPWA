@@ -78,13 +78,14 @@
              
               <div class="card-footer border-top-0 bg-transparent">
                 <div class="text-center">
-                  <a
+                  <button
                     class="btn d-flex align-items-center justify-content-center btn-primary mt-auto"
-                    href="https://api.whatsapp.com/send?phone=62895701782220&text=Hallo%20kak%20saya%20mau%20booking%20mobil%20 {{ $car->nama_mobil }}" 
+                    {{-- href="https://api.whatsapp.com/send?phone=62895701782220&text=Hallo%20kak%20saya%20mau%20booking%20mobil%20 {{ $car->nama_mobil }}"  --}}
                     target="_blank"
                     style="column-gap: 0.4rem"
+                    data-bs-toggle="modal" data-bs-target="#modalSewa"
                     >Sewa Mobil <i class="ri-whatsapp-line"></i
-                  ></a>
+                  ></button>
                 </div>
               </div>
             </div>
@@ -92,6 +93,45 @@
         </div>
       </div>
     </section>
+
+    {{-- modal pemesanan --}}
+    <div class="modal fade" id="modalSewa" tabindex="-1" aria-labelledby="modalSewaLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title fs-5" id="modalSewaLabel">Isi Data Diri</h5>
+            {{-- <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button> --}}
+          </div>
+          <div class="modal-body">
+
+            {{-- nama lengkap --}}
+            <label class="form-label" for="#nama">Nama Lengkap</label>
+            <input type="text" id='nama' placeholder="Masukan nama lengkap Anda" class="form-control mb-2" name="nama"/>
+
+            {{-- nohp --}}
+            <label class="form-label" for="#nohp">Nomor Telepon / Whatsapp</label>
+            <input type="text" id='nohp' placeholder="Masukan Telepon atau Whatsapp Anda" class="form-control mb-2" name="nohp"/>
+
+            {{-- alamat --}}
+            <label class="form-label" for="#alamat">Alamat Lengkap</label>
+            <textarea class="form-control mb-2" placeholder="Masukan alamat lengkap Anda" id="alamat" name="alamat"></textarea>
+
+            <hr/>
+            <label class="form-label" for="#sewa">Tanggal Penyewaan</label>
+            <input type="date" id='sewa' placeholder="Pilih Tanggal Penyewaan" class="form-control mb-2" name="sewa"/>
+
+            <label class="form-label" for="#pengembalian">Tanggal Pengembalian</label>
+            <input type="date" id='pengembalian' placeholder="Pilih Tanggal Pengembalian" class="form-control mb-2" name="pengembalian"/>
+
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Batal</button>
+            <button type="button" class="btn btn-info">Pesan Sekarang</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    {{--  --}}
     <!-- Bootstrap core JS-->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
     <!-- Core theme JS-->
