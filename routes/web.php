@@ -16,6 +16,8 @@ use App\Http\Controllers\Frontend\ContactController;
 use App\Http\Controllers\Admin\TestimonialController;
 use App\Http\Controllers\Frontend\HomepageController;
 
+use App\Http\Controllers\SewaController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -39,6 +41,8 @@ Route::post('kontak', [\App\http\Controllers\Frontend\ContactController::class,'
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+Route::post("/booking", [SewaController::class, "insert"]);
 
 Route::group(['middleware' => ['auth','is_admin'],'prefix' => 'admin','as' => 'admin.'],function () {
     Route::get('users', [\App\Http\Controllers\UserController::class, 'index'])->name('users.index');

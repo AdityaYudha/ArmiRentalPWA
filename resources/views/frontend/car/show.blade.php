@@ -97,7 +97,7 @@
     {{-- modal pemesanan --}}
     <div class="modal fade" id="modalSewa" tabindex="-1" aria-labelledby="modalSewaLabel" aria-hidden="true">
       <div class="modal-dialog">
-        <form actio="" method="POST" class="modal-content">
+        <form action="/booking" method="POST" class="modal-content">
           @csrf
           <div class="modal-header">
             <h5 class="modal-title fs-5" id="modalSewaLabel">Isi Data Diri</h5>
@@ -128,7 +128,7 @@
           </div>
           <div class="modal-footer">
             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Batal</button>
-            <button type="button" class="btn btn-info">Pesan Sekarang</button>
+            <button type="submit" class="btn btn-info">Pesan Sekarang</button>
           </div>
         </form>
       </div>
