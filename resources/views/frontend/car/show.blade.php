@@ -127,22 +127,22 @@
             <input type="hidden" name="car" value="<?= $car->id ?>"/>
             {{-- nama lengkap --}}
             <label class="form-label" for="#nama">Nama Lengkap</label>
-            <input type="text" id='nama' placeholder="Masukan nama lengkap Anda" class="form-control mb-2" name="nama"/>
+            <input required type="text" id='nama' placeholder="Masukan nama lengkap Anda" class="form-control mb-2" name="nama"/>
 
             {{-- nohp --}}
             <label class="form-label" for="#nohp">Nomor Telepon / Whatsapp</label>
-            <input type="text" id='nohp' placeholder="Masukan Telepon atau Whatsapp Anda" class="form-control mb-2" name="nohp"/>
+            <input required type="text" id='nohp' placeholder="Masukan Telepon atau Whatsapp Anda" class="form-control mb-2" name="nohp"/>
 
             {{-- alamat --}}
             <label class="form-label" for="#alamat">Alamat Lengkap</label>
-            <textarea class="form-control mb-2" placeholder="Masukan alamat lengkap Anda" id="alamat" name="alamat"></textarea>
+            <textarea required class="form-control mb-2" placeholder="Masukan alamat lengkap Anda" id="alamat" name="alamat"></textarea>
 
             <hr/>
             <label class="form-label" for="#sewa">Tanggal Penyewaan</label>
-            <input type="date" id='sewa' placeholder="Pilih Tanggal Penyewaan" class="form-control mb-2" name="sewa"/>
+            <input required type="date" id='sewa' placeholder="Pilih Tanggal Penyewaan" class="form-control mb-2" name="sewa"/>
 
             <label class="form-label" for="#pengembalian">Tanggal Pengembalian</label>
-            <input type="date" id='pengembalian' placeholder="Pilih Tanggal Pengembalian" class="form-control mb-2" name="pengembalian"/>
+            <input required type="date" id='pengembalian' placeholder="Pilih Tanggal Pengembalian" class="form-control mb-2" name="pengembalian"/>
 
           </div>
           <div class="modal-footer">
