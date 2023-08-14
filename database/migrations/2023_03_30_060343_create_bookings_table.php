@@ -20,6 +20,7 @@ return new class extends Migration
             $table->date("penyewaan");
             $table->date("pengembalian");
             $table->integer("hari");
+            $table->decimal("biaya");
             $table->timestamps();
         });
     }

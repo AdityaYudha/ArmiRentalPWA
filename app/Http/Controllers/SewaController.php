@@ -24,6 +24,9 @@ class SewaController extends Controller
         $selesai = Carbon::createFromFormat('Y-m-d', $request->input('pengembalian'));
         $hari = $selesai->diffInDays($mulai);
 
+        // menghitung biaya hari * price sewa
+        $biaya = $selected_car->price  * $hari;
+
         // menyimpan data penyewaan
         $booking = new Booking;
         $booking->nama_lengkap = $request->input("nama");
@@ -32,6 +35,7 @@ class SewaController extends Controller
         $booking->penyewaan = $request->input("sewa");
         $booking->pengembalian = $request->input("pengembalian");
         $booking->hari = $hari;
+        $booking->biaya = $biaya;
         $booking->car()->associate($selected_car);
 
         $booking->save();
