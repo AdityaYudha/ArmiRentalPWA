@@ -74,19 +74,39 @@
                   </ul>
                 </div>
               </div>
+
+              @if(session('success'))
+              <div class="card-body card-body-custom pt-4">
+                <h5>Pemesanan Berhasil</h5>
+                <p>Untuk mengkonfirmasi pemesanan silahkan konfirmasi melalui whatsapp Admin</p>
+              </div>
+
+              <div class="card-footer border-top-0 bg-transparent">
+                <div class="text-center">
+                  <a
+                    class="btn d-flex align-items-center justify-content-center btn-success mt-auto"
+                    href="https://api.whatsapp.com/send?phone=62895701782220&text=Hallo%20kak%20saya%20mau%20booking%20mobil%20 {{ $car->nama_mobil }}" 
+                    target="_blank"
+                    style="width: 100%;color: white;"
+                    >
+                    Konfirmasi
+                    <i class="ri ri-whatsapp-line ml-2"></i>
+                  </a>
+                </div>
+              </div>
+              @else
               <!-- Product actions-->
-             
               <div class="card-footer border-top-0 bg-transparent">
                 <div class="text-center">
                   <button
                     class="btn d-flex align-items-center justify-content-center btn-primary mt-auto"
-                    {{-- href="https://api.whatsapp.com/send?phone=62895701782220&text=Hallo%20kak%20saya%20mau%20booking%20mobil%20 {{ $car->nama_mobil }}"  --}}
                     target="_blank"
                     style="width: 100%;"
                     data-bs-toggle="modal" data-bs-target="#modalSewa"
                     >Sewa Mobil</button>
                 </div>
               </div>
+              @endif
             </div>
           </div>
         </div>
