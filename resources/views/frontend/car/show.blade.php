@@ -97,13 +97,15 @@
     {{-- modal pemesanan --}}
     <div class="modal fade" id="modalSewa" tabindex="-1" aria-labelledby="modalSewaLabel" aria-hidden="true">
       <div class="modal-dialog">
-        <div class="modal-content">
+        <form actio="" method="POST" class="modal-content">
+          @csrf
           <div class="modal-header">
             <h5 class="modal-title fs-5" id="modalSewaLabel">Isi Data Diri</h5>
             {{-- <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button> --}}
           </div>
           <div class="modal-body">
 
+            <input type="hidden" name="car" value="<?= $car->id ?>"/>
             {{-- nama lengkap --}}
             <label class="form-label" for="#nama">Nama Lengkap</label>
             <input type="text" id='nama' placeholder="Masukan nama lengkap Anda" class="form-control mb-2" name="nama"/>
@@ -128,7 +130,7 @@
             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Batal</button>
             <button type="button" class="btn btn-info">Pesan Sekarang</button>
           </div>
-        </div>
+        </form>
       </div>
     </div>
     {{--  --}}
