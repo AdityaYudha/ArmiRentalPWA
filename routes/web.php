@@ -55,6 +55,6 @@ Route::group(['middleware' => ['auth','is_admin'],'prefix' => 'admin','as' => 'a
     Route::resource('teams', \App\Http\Controllers\Admin\TeamController::class);
     Route::resource('settings', \App\Http\Controllers\Admin\SettingController::class)->only(['index','store','update']);
     Route::resource('contacts', \App\Http\Controllers\Admin\ContactController::class)->only(['index','destroy']);
-    Route::resource('bookings', \App\Http\Controllers\Admin\BookingController::class)->only(['index','destroy']);
+    Route::resource('bookings', BookingController::class)->only(['index','destroy', 'store']);
     Route::resource('blogs', \App\Http\Controllers\Admin\BlogController::class);
 });

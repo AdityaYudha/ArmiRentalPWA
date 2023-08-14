@@ -9,9 +9,22 @@
           <div class="col-12">
 
             <div class="card">
-              <div class="card-header">
-                <h3 class="card-title">Semua Data</h3>
-              </div>
+              <form action="/admin/bookings" method="POST" class="card-header">
+                @csrf
+                <br/>
+                <div class="d-flex justify-content-start align-items-end">
+                  <div>
+                    <label class="text-label">Dari</label>
+                    <input name="now" id="date-from" type="date" class="form-control"/>
+                  </div>
+                  <div class="ml-3">
+                    <label class="text-label">Hingga</label>
+                    <input name="next" type="date" class="form-control"/>
+                  </div>
+
+                  <button type="submit" class="btn btn-outline-primary ml-3">Terapkan</button>
+                </div>
+              </form>
               <!-- /.card-header -->
               <div class="card-body">
                 <div class="table-responsive">
@@ -23,6 +36,11 @@
                         <th>Alamat Lengkap</th>
                         <th>Nomer HP/Whatsap</th>
                         <th>Mobil</th>
+                        <th>Harga</th>
+                        <th>Tanggal Pemesanan</th>
+                        <th>Tanggal Pengembalian</th>
+                        <th>Jumlah Hari</th>
+                        <th>Biaya</th>
                         <th>Action</th>
                     </tr>
                     </thead>
@@ -36,6 +54,11 @@
                                     <a href="telp:{{ $booking->nomer_wa }}">{{ $booking->nomer_wa }}</a>
                                 </td>
                                 <td>{{ $booking->car->nama_mobil }}</td>
+                                <td>{{ $booking->car->price }}</td>
+                                <td>{{ $booking->penyewaan }}</td>
+                                <td>{{ $booking->pengembalian }}</td>
+                                <td>{{ $booking->hari }}</td>
+                                <td>{{ $booking->biaya }}</td>
                                 <td>
                                 <div class="btn-group btn-group-sm">
                                     <form onclick="return confirm('are you sure !')" action="{{ route('admin.bookings.destroy', $booking) }}"
@@ -82,6 +105,6 @@
     </script>
     <script src="https://cdn.datatables.net/1.13.3/js/jquery.dataTables.min.js"></script>
     <script>
-    $("#data-table").DataTable();
+    $("#data-table").DataTable()
     </script>
 @endpush

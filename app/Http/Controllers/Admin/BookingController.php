@@ -5,16 +5,29 @@ namespace App\Http\Controllers\Admin;
 use App\Models\Booking;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use Carbon\Carbon;
 
 class BookingController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
-    public function index()
+    public function index(Request $request)
     {
-        $bookings = Booking::with('car')->get();
 
+        // filter
+        $now = Carbon::now();
+        $next = Carbon::now()->addDays(7);
+
+        // cek metode request
+        if($request->method() == "POST") {
+
+            // jika method post ambil data dari user input
+            $now = Carbon::createFromFormat('Y-m-d', $request->input('now'));
+            $next = Carbon::createFromFormat('Y-m-d', $request->input('next'));
+        }
+        
+        $bookings = Booking::with('car')->whereBetween("penyewaan", [$now, $next])->get();
         return view('admin.bookings.index', compact('bookings'));
     }
 
@@ -31,7 +44,13 @@ class BookingController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        // cek metode request
+        $now = Carbon::createFromFormat('Y-m-d', $request->input('now'));
+        $next = Carbon::createFromFormat('Y-m-d', $request->input('next'));
+
+        // 
+        $bookings = Booking::with('car')->whereBetween("penyewaan", [$now, $next])->get();
+        return view('admin.bookings.index', compact('bookings'));
     }
 
     /**
