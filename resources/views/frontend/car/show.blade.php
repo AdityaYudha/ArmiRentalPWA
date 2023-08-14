@@ -82,10 +82,9 @@
                     class="btn d-flex align-items-center justify-content-center btn-primary mt-auto"
                     {{-- href="https://api.whatsapp.com/send?phone=62895701782220&text=Hallo%20kak%20saya%20mau%20booking%20mobil%20 {{ $car->nama_mobil }}"  --}}
                     target="_blank"
-                    style="column-gap: 0.4rem"
+                    style="width: 100%;"
                     data-bs-toggle="modal" data-bs-target="#modalSewa"
-                    >Sewa Mobil <i class="ri-whatsapp-line"></i
-                  ></button>
+                    >Sewa Mobil</button>
                 </div>
               </div>
             </div>
