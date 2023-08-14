@@ -17,6 +17,9 @@ return new class extends Migration
             $table->string('nama_lengkap');
             $table->string('alamat_lengkap');
             $table->string('nomer_wa');
+            $table->date("penyewaan");
+            $table->date("pengembalian");
+            $table->integer("hari");
             $table->timestamps();
         });
     }
