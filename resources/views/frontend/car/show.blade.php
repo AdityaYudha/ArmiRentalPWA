@@ -85,7 +85,7 @@
                 <div class="text-center">
                   <a
                     class="btn d-flex align-items-center justify-content-center btn-success mt-auto"
-                    href="https://api.whatsapp.com/send?phone=62895701782220&text=Hallo%20kak%20saya%20mau%20booking%20mobil%20 {{ $car->nama_mobil }}" 
+                    href="https://api.whatsapp.com/send?phone=62895701782220&text=Hallo%20kak%20saya%20{{ session("success") }}%20mau%20booking%20mobil%20 {{ $car->nama_mobil }}" 
                     target="_blank"
                     style="width: 100%;color: white;"
                     >
