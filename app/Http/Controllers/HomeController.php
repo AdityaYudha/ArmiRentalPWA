@@ -3,6 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Type;
+use App\Models\Car;
+use App\Models\Booking;
 
 class HomeController extends Controller
 {
@@ -23,6 +26,10 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('home');
+        $data['tipe']  = Type::count();
+        $data['mobil'] = Car::count();
+        $data['pesanan'] = Booking::count();
+
+        return view('home', compact("data"));
     }
 }
