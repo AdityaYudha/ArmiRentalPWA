@@ -41,6 +41,6 @@ class SewaController extends Controller
 
         $booking->save();
 
-        return redirect('/daftar-mobil/'.$request->input("car"))->with("success", $request->input("nama"));
+        return redirect('/daftar-mobil/'.$request->input("car"))->with("success-booking", $request->input("nama"));
     }
 }

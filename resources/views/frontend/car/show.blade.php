@@ -75,7 +75,7 @@
                 </div>
               </div>
 
-              @if(session('success'))
+              @if(session('success-booking'))
               <div class="card-body card-body-custom pt-4">
                 <h5>Pemesanan Berhasil</h5>
                 <p>Untuk mengkonfirmasi pemesanan silahkan konfirmasi melalui whatsapp Admin</p>
