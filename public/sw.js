@@ -11,7 +11,29 @@ self.addEventListener("install", function (event) {
 
 const filesToCache = [
     '/',
-    '/offline.html'
+    '/offline.html',
+    '/css/adminlte.min.css',
+    '/css/fontawesome.min.css',
+    '/css/icheck-bootstrap.min.css',
+    '/js/adminlte.min.js',
+    '/js/bootstrap.js',
+    '/frontend/index.html',
+    '/frontend/css/aos.css',
+    '/frontend/css/bootstrap-datepicker.css',
+    '/frontend/css/bootstrap.min.css',
+    '/frontend/css/bootstrap.min.css.map',
+    '/frontend/css/jquery-ui.css',
+    '/frontend/css/jquery.fancybox.min.css',
+    '/frontend/css/magnific-popup.css',
+    '/frontend/css/mediaelementplayer.css',
+    '/frontend/css/owl.carousel.min.css',
+    '/frontend/css/owl.theme.default.min.css',
+    '/frontend/css/style.css',
+    '/frontend/css/bootstrap/bootstrap-grid.css',
+    '/frontend/css/bootstrap/bootstrap-reboot.css',
+    '/frontend/css/bootstrap/bootstrap.css',
+    '/frontend/images/hero_new_3.jpg'
+
 ];
 
 const checkResponse = function (request) {
@@ -36,7 +58,7 @@ const addToCache = function (request) {
 
 const returnFromCache = function (request) {
     return caches.open("offline").then(function (cache) {
-        return cache.match(request).then(function (matching) {
+        return cache.match(request, {ignoreVary: true}).then(function (matching) {
             if (!matching || matching.status === 404) {
                 return cache.match("offline.html");
             } else {
