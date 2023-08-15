@@ -36,6 +36,7 @@ class SewaController extends Controller
         $booking->pengembalian = $request->input("pengembalian");
         $booking->hari = $hari;
         $booking->biaya = $biaya;
+        $booking->terkonfirmasi = FALSE;
         $booking->car()->associate($selected_car);
 
         $booking->save();

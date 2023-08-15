@@ -93,12 +93,26 @@
             </li>
 
             <li class="nav-item">
-                <a href="{{ route('admin.bookings.index') }}" class="nav-link">
+                <a href="#" class="nav-link">
                     <i class="nav-icon fa fa-credit-card"></i>
                     <p>
                         {{ __('Booking') }}
                     </p>
                 </a>
+                <ul class="nav nav-treeview">
+                    <li class="nav-item">
+                        <a href="/admin/bookings/waiting" class="nav-link">
+                            <i class="far fa-circle nav-icon"></i>
+                            <p>Menunggu</p>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="/admin/bookings/confirmed" class="nav-link">
+                            <i class="far fa-circle nav-icon"></i>
+                            <p>Terkonfirmasi</p>
+                        </a>
+                    </li>
+                </ul>
             </li>
         </ul>
     </nav>

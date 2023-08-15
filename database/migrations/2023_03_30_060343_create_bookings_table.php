@@ -21,6 +21,7 @@ return new class extends Migration
             $table->date("pengembalian");
             $table->integer("hari");
             $table->decimal("biaya");
+            $table->boolean("terkonfirmasi");
             $table->timestamps();
         });
     }

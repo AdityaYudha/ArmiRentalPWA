@@ -40,17 +40,78 @@ class BookingController extends Controller
     }
 
     /**
+     * mengambil data pembokingan yang telah dikonfirmasi admin
+     */
+    public function confirmed(){
+
+        // ambil data booking
+        $bookings = Booking::with('car')->where("terkonfirmasi", TRUE)->get();
+
+        // set title
+        $title = "Booking Terkonfirmasi";
+
+        $konfirmasi = TRUE;
+
+        return view('admin.bookings.index', compact('bookings', "title", "konfirmasi"));
+    }
+
+    /**
+     * Mengambil data pembokingan yang masih menunggu konfirmasi
+     */
+    public function waiting()
+    {
+        // ambil data booking
+        $bookings = Booking::with('car')->where("terkonfirmasi", FALSE)->get();
+
+        // set title
+        $title = "Booking Menunggu Terkonfirmasi";
+
+        $konfirmasi = FALSE;
+
+        return view('admin.bookings.index', compact('bookings', "title", "konfirmasi"));
+    }
+
+    /**
      * Store a newly created resource in storage.
      */
     public function store(Request $request)
     {
-        // cek metode request
+
+        // cak dari halaman mana request datang
+        $origin = $request->input("halaman");
+
         $now = Carbon::createFromFormat('Y-m-d', $request->input('now'));
         $next = Carbon::createFromFormat('Y-m-d', $request->input('next'));
 
-        // 
-        $bookings = Booking::with('car')->whereBetween("penyewaan", [$now, $next])->get();
-        return view('admin.bookings.index', compact('bookings'));
+        $bookings = [];
+
+        $title = "";
+
+        $konfirmasi = FALSE;
+
+        if($origin == "konfirmasi"){
+
+            // 
+            $bookings = Booking::with('car')
+            ->whereBetween("penyewaan", [$now, $next])
+            ->where("terkonfirmasi", TRUE)
+            ->get();
+
+            $title = "Booking Terkonfirmasi";
+            $konfirmasi = TRUE;
+
+        }else{
+
+            $bookings = Booking::with('car')
+            ->whereBetween("penyewaan", [$now, $next])
+            ->where("terkonfirmasi", FALSE)
+            ->get();
+
+            $title = "Booking Menunggu Terkonfirmasi";
+            $konfirmasi = FALSE;
+        }
+
+        return view('admin.bookings.index', compact('bookings', 'title', 'konfirmasi'));
     }
 
     /**
@@ -70,11 +131,33 @@ class BookingController extends Controller
     }
 
     /**
-     * Update the specified resource in storage.
+     * Membatalkan konfirmasi pesanan
      */
-    public function update(Request $request, Booking $booking)
+    public function batalkan_konfirmasi($id)
     {
-        //
+        $booking = Booking::find($id);
+        $booking->terkonfirmasi = FALSE;
+        $booking->save();
+
+        // menampilkan alert
+        toastr()->success('Data berhasil diupdate');
+
+        return redirect()->to("/admin/bookings/confirmed");
+    }
+
+    /**
+     * mengkonfirmasi pesanan
+     */
+    public function konfirmasi_pesanan($id)
+    {
+        $booking = Booking::find($id);
+        $booking->terkonfirmasi = TRUE;
+        $booking->save();
+
+        // menampilkan alert
+        toastr()->success('Data berhasil diupdate');
+
+        return redirect()->to("/admin/bookings/waiting");
     }
 
     /**

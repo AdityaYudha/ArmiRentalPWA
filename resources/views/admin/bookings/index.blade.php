@@ -7,9 +7,10 @@
       <div class="container-fluid">
         <div class="row">
           <div class="col-12">
-
             <div class="card">
               <form action="/admin/bookings" method="POST" class="card-header">
+                <h4>{{$title}}</h4>
+                <hr/>
                 @csrf
                 <br/>
                 <div class="d-flex justify-content-start align-items-end">
@@ -22,6 +23,12 @@
                     <input name="next" type="date" class="form-control"/>
                   </div>
 
+                  @if($konfirmasi)
+                  <input type="hidden" name="halaman" value="konfirmasi"/>
+                  @else
+                  <input type="hidden" name="halaman" value="tidakkonfirmasi"/>
+                  @endif
+                  
                   <button type="submit" class="btn btn-outline-primary ml-3">Terapkan</button>
                 </div>
               </form>
@@ -67,6 +74,12 @@
                                         @method('DELETE')
                                         <button class="btn btn-sm btn-danger" booking="submit"><i class="fa fa-trash"></i></button>
                                     </form>
+
+                                    @if($konfirmasi)
+                                    <a href="/admin/bookings/cancel-confirmed/{{ $booking->id }}" class="btn btn-warning btn-sm ml-3">Batalkan</a>
+                                    @else
+                                    <a href="/admin/bookings/confirm-booking/{{ $booking->id }}" class="btn btn-warning btn-sm ml-3">Konfirmasi</a>
+                                    @endif
                                 </div>
                                 </td>
                             </tr>
