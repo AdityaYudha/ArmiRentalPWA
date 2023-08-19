@@ -28,15 +28,15 @@ use App\Http\Controllers\SewaController;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
-Route::get('/', [\App\http\Controllers\Frontend\HomepageController::class,'index'])->name('homepage');
-Route::get('daftar-mobil', [\App\http\Controllers\Frontend\CarController::class,'index'])->name('car.index');
-Route::get('daftar-mobil/{car}', [\App\http\Controllers\Frontend\CarController::class,'show'])->name('car.show');
-Route::post('daftar-mobil', [\App\http\Controllers\Frontend\CarController::class,'store'])->name('car.store');
-Route::get('blog', [\App\http\Controllers\Frontend\BlogController::class,'index'])->name('blog.index');
-Route::get('blog/{blog:slug}', [\App\http\Controllers\Frontend\BlogController::class,'show'])->name('blog.show');
-Route::get('tentang-kami',[\App\http\Controllers\Frontend\AboutController::class,'index']);
-Route::get('kontak', [\App\http\Controllers\Frontend\ContactController::class,'index']);
-Route::post('kontak', [\App\http\Controllers\Frontend\ContactController::class,'store'])->name('contact.store');
+Route::get('/', [\App\Http\Controllers\Frontend\HomepageController::class,'index'])->name('homepage');
+Route::get('daftar-mobil', [\App\Http\Controllers\Frontend\CarController::class,'index'])->name('car.index');
+Route::get('daftar-mobil/{car}', [\App\Http\Controllers\Frontend\CarController::class,'show'])->name('car.show');
+Route::post('daftar-mobil', [\App\Http\Controllers\Frontend\CarController::class,'store'])->name('car.store');
+Route::get('blog', [\App\Http\Controllers\Frontend\BlogController::class,'index'])->name('blog.index');
+Route::get('blog/{blog:slug}', [\App\Http\Controllers\Frontend\BlogController::class,'show'])->name('blog.show');
+Route::get('tentang-kami',[\App\Http\Controllers\Frontend\AboutController::class,'index']);
+Route::get('kontak', [\App\Http\Controllers\Frontend\ContactController::class,'index']);
+Route::post('kontak', [\App\Http\Controllers\Frontend\ContactController::class,'store'])->name('contact.store');
 
 Auth::routes();
 

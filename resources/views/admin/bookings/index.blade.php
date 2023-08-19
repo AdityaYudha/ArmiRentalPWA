@@ -13,23 +13,26 @@
                 <hr/>
                 @csrf
                 <br/>
-                <div class="d-flex justify-content-start align-items-end">
-                  <div>
-                    <label class="text-label">Dari</label>
-                    <input name="now" id="date-from" type="date" class="form-control"/>
-                  </div>
-                  <div class="ml-3">
-                    <label class="text-label">Hingga</label>
-                    <input name="next" type="date" class="form-control"/>
-                  </div>
+                <div class="d-flex justify-content-between align-items-end">
+                  <div class="d-flex justify-content-start align-items-end">
+                    <div>
+                      <label class="text-label">Dari</label>
+                      <input name="now" id="date-from" type="date" class="form-control"/>
+                    </div>
+                    <div class="ml-3">
+                      <label class="text-label">Hingga</label>
+                      <input name="next" type="date" class="form-control"/>
+                    </div>
 
-                  @if($konfirmasi)
-                  <input type="hidden" name="halaman" value="konfirmasi"/>
-                  @else
-                  <input type="hidden" name="halaman" value="tidakkonfirmasi"/>
-                  @endif
-                  
-                  <button type="submit" class="btn btn-outline-primary ml-3">Terapkan</button>
+                    @if($konfirmasi)
+                    <input type="hidden" name="halaman" value="konfirmasi"/>
+                    @else
+                    <input type="hidden" name="halaman" value="tidakkonfirmasi"/>
+                    @endif
+                    
+                    <button type="submit" class="btn btn-outline-primary ml-3">Terapkan</button>
+                  </div>
+                  <button type="button" onclick="cetakLaporan()" class="btn btn-primary ml-3">Cetak Laporan</button>
                 </div>
               </form>
               <!-- /.card-header -->
@@ -118,6 +121,13 @@
     </script>
     <script src="https://cdn.datatables.net/1.13.3/js/jquery.dataTables.min.js"></script>
     <script>
-    $("#data-table").DataTable()
+      $("#data-table").DataTable()
+
+      /**
+       * fungsi ini digunakan untuk mencetak laporan
+       * */
+      function cetakLaporan(){
+        window.print()
+      }
     </script>
 @endpush
