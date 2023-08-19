@@ -23,7 +23,7 @@
                   </div>
                   <div class="mb-3 mb-md-0 col-md-4">
                     <select name="penumpang" id="penumpang" class="custom-select form-control">
-                      <option value="">Jumlah Penumpang</option>
+                      <option value="">Jumlah Kursi</option>
                       <option value="1">1</option>
                       <option value="2">2</option>
                       <option value="3">3</option>
@@ -87,7 +87,7 @@
                   <span class="number text-primary">03.</span>
                   <h3>Pembayaran</h3>
                   <p>
-                    Lakukan pembayaran untuk konfirmasi pemesanan anda.
+                    Konfirmasi pesanan di Whatsapp kemudian lakukan pembayaran.
                   </p>
                 </div>
               </div>
@@ -108,10 +108,10 @@
                 >
               </h3>
               <p class="mb-5">
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                Repudiandae, explicabo iste a labore id est quas, doloremque
-                veritatis! Provident odit pariatur dolorem quisquam,
-                voluptatibus voluptates optio accusamus, vel quasi quidem!
+                Kami dengan tulus meyakini bahwa pelayanan terbaik adalah pondasi dari
+                setiap perjalanan yang tak terlupakan. Sebagai penyedia layanan rental mobil
+                yang berdedikasi, kami mendedikasikan diri kami untuk memberikan pengalaman
+                yang luar biasa kepada setiap pelanggan.
               </p>
 
               <p><a href="#" class="btn btn-primary">Kontak Kami</a></p>
@@ -126,7 +126,7 @@
             <div class="col-lg-7">
               <h2 class="section-heading"><strong>Daftar Mobil</strong></h2>
               <p class="mb-5">
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                Kami menyediakan berbagai jenis mobil sesuai kebutuhan pelanggan saat ini.
               </p>
             </div>
           </div>
@@ -169,13 +169,13 @@
         </div>
       </div>
 
-      <div class="site-section bg-light">
+      <div class="site-section bg-white">
         <div class="container">
           <div class="row">
             <div class="col-lg-7">
               <h2 class="section-heading"><strong>Testimonial</strong></h2>
               <p class="mb-5">
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                Kata mereka tentang rental mobil kami.
               </p>
             </div>
           </div>

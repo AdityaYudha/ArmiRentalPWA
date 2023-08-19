@@ -32,7 +32,8 @@ const filesToCache = [
     '/frontend/css/bootstrap/bootstrap-grid.css',
     '/frontend/css/bootstrap/bootstrap-reboot.css',
     '/frontend/css/bootstrap/bootstrap.css',
-    '/frontend/images/hero_new_3.jpg'
+    '/frontend/images/hero_new_3.jpg',
+    '/frontend/images/feature_01.png'
 
 ];
 
