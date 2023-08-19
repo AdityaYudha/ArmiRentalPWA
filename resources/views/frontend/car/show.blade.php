@@ -38,6 +38,15 @@
           </div>
           <div class="col-lg-4 mb-5">
             <div class="card">
+
+              {{--  --}}
+              @if(Session::has("gagal"))
+              <div class="card-body alert alert-danger card-body-custom pt-4">
+                <h5 class="fw-bold">Pemesanan Gagal</h5>
+                <p>{{ Session("gagal") }}</p>
+              </div>
+              @endif
+              {{--  --}}
               <!-- Product details-->
               <div class="card-body card-body-custom pt-4">
                 <div class="text-center">
