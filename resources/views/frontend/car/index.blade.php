@@ -48,7 +48,7 @@
                           <span class="number">{{ $car->pintu }}</span>
                         </div>
                         <div class="listing-feature pr-4">
-                          <span class="caption">Penumpang:</span>
+                          <span class="caption">Jumlah Kursi:</span>
                           <span class="number">{{ $car->penumpang }}</span>
                         </div>
                       </div>

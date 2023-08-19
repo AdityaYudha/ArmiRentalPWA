@@ -8,8 +8,9 @@
           <div class="row align-items-end">
             <div class="col-lg-5">
               <div class="intro">
-                <h2><strong>{{ $car->nama_mobil }}</strong></h2>
+                <h2><strong>Detail Mobil</strong></h2>
                 <div class="custom-breadcrumbs">
+                  <p>Daftar Mobil / <strong>{{ $car->nama_mobil }}</strong></p>
                 </div>
               </div>
             </div>
@@ -30,8 +31,7 @@
                 <div>
                   <!-- Product name-->
                   <h3 class="fw-bolder text-primary">{{ $car->nama_mobil }}</h3>
-                  <p>{{ $car->description }}
-                  </p>
+                  <p>{{ $car->description }}</p>
                 </div>
               </div>
             </div>
